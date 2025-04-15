@@ -36,9 +36,17 @@ public static class Dijkstra_unassisted
             }
         }
 
+        var path = new Stack<string>();
+        var tmp = target;
+        path.Push(tmp);
+        while (previous[tmp] != origin)
+        {
+            path.Push(previous[tmp]);
+            tmp = previous[tmp];
+        }
+        path.Push(origin);
 
-
-        return (distances[target], new List<string>());
+        return (distances[target], path.ToList());
     }
 
 }

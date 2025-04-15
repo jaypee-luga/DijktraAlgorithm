@@ -18,9 +18,10 @@ while (true)
     }
     else if (input[0] == "path" && input.Length == 3)
     {
-        // var (distance, path) = Dijkstra.ShortestPath(graph, input[1], input[2]);
-        var (distance, path) = Dijkstra_unassisted.FindShortestPath(graph, input[1], input[2]);
+        var (distance, path) = Dijkstra.ShortestPath(graph, input[1], input[2]);
+        var (distance2, path2) = Dijkstra_unassisted.FindShortestPath(graph, input[1], input[2]);
         Console.WriteLine($"Shortest path: {string.Join(" -> ", path)} (Total Distance: {distance})");
+        Console.WriteLine($"Shortest path: {string.Join(" -> ", path2)} (Total Distance: {distance2})");
     }
     else
     {
